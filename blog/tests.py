@@ -8,6 +8,8 @@ class TestView(TestCase):
         self.client = Client()
         self.user_ssinsaram2 = User.objects.create_user(username="ssinsaram2", password="somepassword")
         self.user_trump = User.objects.create_user(username="trump", password="somepassword")
+        self.user_ssinsaram2.is_staff = True
+        self.user_ssinsaram2.save()
 
         self.category_embedded = Category.objects.create(name="embedded", slug="embedded")
         self.category_music = Category.objects.create(name='music', slug='music')
@@ -189,9 +191,13 @@ class TestView(TestCase):
         response = self.client.get('/blog/create_post/')
         self.assertNotEqual(response.status_code, 200)
 
-        # 로그인을 한다.
+        # staff가 아닌 trump가 로그인을 한다.
         self.client.login(username='trump', password='somepassword')
+        response = self.client.get('/blog/create_post/')
+        self.assertNotEqual(response.status_code, 200)
 
+        # staff인 ssinsaram2으로 로그인한다.
+        self.client.login(username='ssinsaram2', password='somepassword')
         response = self.client.get('/blog/create_post/')
         self.assertEqual(response.status_code, 200)
         soup = BeautifulSoup(response.content, 'html.parser')
@@ -210,4 +216,4 @@ class TestView(TestCase):
 
         last_post = Post.objects.last()
         self.assertEqual(last_post.title, "Post Form 만들기")
-        self.assertEqual(last_post.author.username, 'trump')
+        self.assertEqual(last_post.author.username, 'ssinsaram2')
