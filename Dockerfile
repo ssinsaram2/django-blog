@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.11.0-alpine
+FROM python:3.9-alpine
 
 # set work directory
 WORKDIR /usr/src/app
@@ -9,9 +9,6 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 COPY . /usr/src/app/
-
-RUN apk update
-RUN apk add postgresql-dev gcc python3-dev musl-dev zlib-dev jpeg-dev
 
 # install dependencies
 RUN pip install --upgrade pip
