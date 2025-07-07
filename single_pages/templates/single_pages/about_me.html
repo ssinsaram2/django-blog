@@ -1,19 +1,186 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>소프트웨어 개발을 공부하는 신제현입니다.</title>
+    <title>신제현(螢雪之功)</title>
+
+    <link rel="stylesheet" href="{% static 'blog/bootstrap/bootstrap.min.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'single_pages/css/about_me.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/726bbd6862.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-<nav>
-    <a href="/blog/">Blog</a>
-    <a href="/aobut_me"/>About Me</a>
-</nav>
+{% include 'blog/navbar.html' %}
 
-<h1>안녕하세요. 신제현입니다</h1>
-<h2>이력</h2>
-<h2>포트폴리오</h2>
-<h3>아직 준비 중입니다.</h3>
+<section>
+    <div class="container mt-4">
+        <div class='row'>
+        <div class="col-lg-8">
+            <h1>안녕하세요. 형설지공 신제현입니다.</h1>
+            <br/>
+            <p class="lead">
+                음악과 컴퓨터과학, 독서를 좋아합니다.<br/>
+                대학을 졸업한 후 공기업에서 5년 간 경력을 쌓은 후에 미국 석박사 통합과정으로 유학을 가고 싶습니다.
+            </p>
+
+            <ul>
+                <li>직업 경력</li>
+                <ul>
+                    <li>주택금융공사 5년</li>
+                </ul>
+                <li>학력</li>
+                <ul>
+                    <li>공학 학사, 소프트웨어공학심화, 숭실대학교</li>
+                </ul>
+                <li>저서</li>
+                <ul>
+                    <li>최신 컴퓨터 시스템 프로그래밍 (2030)</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="col-lg-4">
+            <img class="img-fluid" src="{% static 'single_pages/images/cosplay.jpg' %}">
+        </div>
+        </div>
+    </div>
+</section>
+
+<section class="bg-light margin-for-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>포트폴리오</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card" data-toggle="modal" data-target="#holiday">
+                        <img class="card-img-top" src="{% static 'single_pages/images/holiday.jpg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">평범한 주말</h5>
+                            <p>평온한 주말을 보냈습니다! :)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card" data-toggle="modal" data-target="#osaka_travel">
+                        <img class="card-img-top" src="{% static 'single_pages/images/osaka_travel.jpg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">오사카 여행</h5>
+                            <p>즐거운 오사카 여행이었습니다~ ;)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card" data-toggle="modal" data-target="#selfie">
+                        <img class="card-img-top" src="{% static 'single_pages/images/selfie.jpg' %}">
+                        <div class="card-body">
+                            <h5 class="card-title">셀피~</h5>
+                            <p>:D</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="holiday" tabindex="-1" role="dialog" aria-labelledby="holidayLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="holidayLabel">평범한 주말</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/holiday.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>평온한 주말을 보냈습니다! :)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="osaka_travel" tabindex="-1" role="dialog" aria-labelledby="osakaTravelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="osakaTravelLabel">오사카 여행</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/osaka_travel.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>즐거운 오사카 여행이었습니다~ ;)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="selfie" tabindex="-1" role="dialog" aria-labelledby="selfieLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="selfieLabel">셀피</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <img class="img-fluid" src="{% static 'single_pages/images/selfie.jpg' %}">
+                    </div>
+                    <div class="col-lg-5">
+                        <p>셀피~</p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="fixed-bottom">
+    {% include 'blog/footer.html' %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
