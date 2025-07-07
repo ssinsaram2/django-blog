@@ -440,5 +440,5 @@ class TestView(TestCase):
         soup = BeautifulSoup(response.content, 'html.parser')
         self.assertIn(self.post_001.title, soup.title.text)
         comment_area = soup.find('div', id='comment-area')
-        self.assertNotIn('ssinsaram2의 댓글입니다.', comment_area.text)
+        self.assertNotIn('ssinsaram2의 댓글입니다.'.strip(), comment_area.text.strip())
 
