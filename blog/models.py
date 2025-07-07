@@ -60,6 +60,8 @@ class Post(models.Model):
     def get_content_markdown(self):
         return markdown(self.content)
 
+    def get_avatar_url(self):
+        return f'https://doitdjango.com/avatar/id/2311/24d0272811b54d78/svg/{self.author.email}'
 
 class Comment(models.Model):
         post = models.ForeignKey(Post, on_delete=models.CASCADE)
