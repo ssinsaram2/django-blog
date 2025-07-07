@@ -208,7 +208,7 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-core/
+_media/
 
 .env.prod
 .env.prod.db
