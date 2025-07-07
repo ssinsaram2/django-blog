@@ -37,3 +37,4 @@ urllib3
 wcwidth
 crispy-bootstrap4
 psycopg2-binary
+gunicorn
