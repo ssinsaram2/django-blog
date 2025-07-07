@@ -21,6 +21,8 @@
                     {% if user.is_authenticated %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle" src="https://doitdjango.com/avatar/id/2311/24d0272811b54d78/svg/{{ user.email }}" width="45px">
+                            &nbsp;
                             {{ user.username }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

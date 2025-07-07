@@ -73,3 +73,6 @@ class Comment(models.Model):
 
         def get_absolute_url(self):
                 return f'{self.post.get_absolute_url()}#comment-{self.pk}'
+
+        def get_avatar_url(self):
+            return f'https://doitdjango.com/avatar/id/2311/24d0272811b54d78/svg/{self.author.email}'
