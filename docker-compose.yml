@@ -11,7 +11,7 @@ services:
       - 443:443
     depends_on:
       - web
-  cerbot:
+  certbot:
     image: certbot/certbot
     entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     volumes:
@@ -19,12 +19,12 @@ services:
       - ./data/certbot/www:/var/www/certbot
   web:
     build: .
-    command: gunicorn django_blog.wsgi:application --bind 0.0.0.0:8000
+    command: gunicorn ssinsaram2-blog.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/usr/src/app/_static
       - media_volume:/usr/src/app/_media
       - ./:/usr/src/app/
-    expose:
+    ports:
       - 8000
     env_file:
       - ./.env.prod

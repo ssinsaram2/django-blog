@@ -212,3 +212,5 @@ _media/
 
 .env.prod
 .env.prod.db
+
+data/

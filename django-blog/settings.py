@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
 ]
 
-ROOT_URLCONF = 'django_blog.urls'
+ROOT_URLCONF = 'django-blog.urls'
 
 TEMPLATES = [
     {
@@ -67,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django_blog.wsgi.application'
+WSGI_APPLICATION = 'django-blog.wsgi.application'
 
 
 # Database
